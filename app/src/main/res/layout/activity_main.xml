@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context="com.example.apoorva.gpandroid.MainActivity">
 
+<<<<<<< HEAD
     <EditText
         android:layout_width="match_parent"
         android:hint="name"
@@ -27,5 +28,12 @@
         android:id="@+id/button"
         android:text="submit"/>
 
+=======
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+      />
+>>>>>>> 5e0773d8678ff5a5ea35c09ed200dc86d1c688db
 
 </LinearLayout>
