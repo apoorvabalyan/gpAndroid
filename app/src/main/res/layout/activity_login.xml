@@ -5,27 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.apoorva.gpandroid.MainActivity">
-
+    tools:context="com.example.apoorva.gpandroid.login"
+    >
     <EditText
-        android:layout_width="match_parent"
-        android:hint="name"
-        android:layout_height="wrap_content"
-        android:id="@+id/e1"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:hint="phone"
-        android:id="@+id/e2"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <EditText
         android:hint="password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
         android:text="submit"/>
-
 
 </LinearLayout>
