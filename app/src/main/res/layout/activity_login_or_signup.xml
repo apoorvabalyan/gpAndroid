@@ -4,14 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.apoorva.gpandroid.loginOrSignup">
+    tools:context="com.example.apoorva.gpandroid.loginOrSignup"
+    android:orientation="vertical">
 <Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Login"/>
+    android:text="Login with phone number"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="sign in"/>
+        android:text="Login with email"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick = "signphone"
+        android:text="sign up with phone"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sign up with email"/>
 </LinearLayout>

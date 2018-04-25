@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context="com.example.apoorva.gpandroid.MainActivity">
 
-<<<<<<< HEAD
     <EditText
         android:layout_width="match_parent"
         android:hint="name"
