@@ -5,11 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.apoorva.gpandroid.signup"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/n"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/statusText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -18,7 +20,7 @@
 
     <EditText
         android:id="@+id/phoneText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Phone number"
@@ -29,20 +31,27 @@
         app:layout_constraintTop_toBottomOf="@+id/statusText" />
 
     <Button
-        android:id="@+id/sendButton"
-        android:layout_width="wrap_content"
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="sendCode"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_login"
+        android:clickable="true"
+        android:padding="16dp"
         android:text="Send Code"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneText" />
+        android:onClick="sendCode"
+        android:id="@+id/sendButton"
+        android:textAllCaps="false"
+        android:textColor="#263238"
+        android:textSize="18sp"
+        android:textStyle="bold" />
     <EditText
         android:id="@+id/codeText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Code"
+        android:layout_marginTop="24dp"
         android:inputType="number"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -50,23 +59,32 @@
         app:layout_constraintTop_toBottomOf="@+id/resendButton" />
 
     <Button
-        android:id="@+id/verifyButton"
-        android:layout_width="wrap_content"
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="verifyCode"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_login"
+        android:clickable="true"
+        android:padding="16dp"
         android:text="Verify Code"
-        app:layout_constraintBottom_toTopOf="@+id/signoutButton"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/codeText" />
+        android:onClick="verifyCode"
+        android:id="@+id/verifyButton"
+        android:textAllCaps="false"
+        android:textColor="#263238"
+        android:textSize="18sp"
+        android:textStyle="bold" />
     <Button
-        android:id="@+id/resendButton"
-        android:layout_width="wrap_content"
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="resendCode"
+        android:layout_marginTop="16dp"
+        android:id="@+id/resendButton"
+        android:background="@drawable/background_signup"
+        android:clickable="true"
+        android:padding="16dp"
         android:text="Resend Code"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verifyButton" />
+        android:textAllCaps="false"
+        android:textColor="#263238"
+        android:onClick="resendCode"
+        android:textSize="18sp" />
 </LinearLayout>
