@@ -57,6 +57,13 @@ public class signup extends AppCompatActivity {
         resendButton.setEnabled(false);
 
         fbAuth = FirebaseAuth.getInstance();
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                Intent intent=new Intent(signup.this,MainActivity.class);
+                        startActivity(intent);
+            }
+        });
 
 
     }
@@ -161,4 +168,5 @@ public class signup extends AppCompatActivity {
                 verificationCallbacks,
                 resendToken);
     }
+
 }

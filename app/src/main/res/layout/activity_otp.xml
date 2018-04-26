@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.example.apoorva.gpandroid.otpActivity">
+
+    <TextView
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:text="Enter the OTP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"/>
+
+    <com.example.apoorva.gpandroid.otpActivity
+        android:id="@+id/txt_pin_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cursorVisible="false"
+        android:digits="1234567890"
+        android:inputType="number"
+        android:maxLength="4"
+        android:textIsSelectable="false"
+        android:textSize="20sp" />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="Resend"
+        android:id="@+id/resendButton"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"/>
+
+
+
+</LinearLayout>
