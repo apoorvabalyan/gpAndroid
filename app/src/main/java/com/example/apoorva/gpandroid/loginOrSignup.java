@@ -5,12 +5,39 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class loginOrSignup extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
 
+public class loginOrSignup extends AppCompatActivity {
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_or_signup);
+        /*
+        *************************************FIREBASE CODE*******************************************
+         */
+        //Checks whether already logged in or not.
+        mAuth = FirebaseAuth.getInstance();
+        if (mAuth.getCurrentUser() != null) {
+            startActivity(new Intent(loginOrSignup.this, exit.class));
+            finish();
+        }
+         /*
+          ********************************************************CODE ENDS HERE**********************************************
+         */
+        findViewById(R.id.sign_inButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(loginOrSignup.this,signup.class));
+            }
+        });
+        findViewById(R.id.loginEmailButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(loginOrSignup.this,login.class));
+            }
+        });
+
     }
     public void signphone(View view)
     {

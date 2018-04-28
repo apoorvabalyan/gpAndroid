@@ -9,11 +9,13 @@
 <Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Login with phone number"/>
+    android:text="Login with phone number"
+    />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login with email"/>
+        android:text="Login with email"
+        android:id="@+id/loginEmailButton"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,5 +24,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sign up with email"/>
+        android:text="sign up with email"
+        android:id="@+id/sign_inButton"/>
 </LinearLayout>
