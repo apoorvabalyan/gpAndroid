@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/n"
+    tools:context="com.example.apoorva.gpandroid.otpActivity">
+
+    <TextView
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:text="Enter the OTP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"/>
+
+    <com.example.apoorva.gpandroid.otpActivity
+        android:background="@android:color/transparent"
+        android:textColorHint="#212121"
+        android:id="@+id/txt_pin_entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cursorVisible="false"
+        android:digits="1234567890"
+        android:inputType="number"
+        android:maxLength="4"
+        android:textIsSelectable="false"
+        android:textSize="20sp" />
+    <Button
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_login"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="Resend"
+        android:id="@+id/resendButton"
+        android:textAllCaps="false"
+        android:textColor="#263238"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <Button
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/verifyButton"
+        android:background="@drawable/background_signup"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="Verify Code"
+        android:textAllCaps="false"
+        android:textColor="#263238"
+        android:textSize="18sp" />
+
+
+
+
+</LinearLayout>

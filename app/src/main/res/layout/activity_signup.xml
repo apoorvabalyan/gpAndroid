@@ -5,15 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.apoorva.gpandroid.signup"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/n"
+    android:padding="16dp">
+
+<<<<<<< HEAD
+    <EditText
+=======
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/phoneText"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/phoneText"
+>>>>>>> 46efd328fcafc11df2767daba0da483d88f305bb
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your email"
         android:id="@+id/e1"
         />
 
+<<<<<<< HEAD
     <EditText
         android:id="@+id/e2"
         android:layout_width="match_parent"
@@ -24,4 +41,63 @@
         android:layout_height="wrap_content"
         android:text="Sign in"
         android:id="@+id/sign_in"/>
+=======
+    <Button
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_login"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="Send Code"
+        android:onClick="sendCode"
+        android:id="@+id/sendButton"
+        android:textAllCaps="false"
+        android:textColor="#263238"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/codeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Code"
+        android:layout_marginTop="24dp"
+        android:inputType="number"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/verifyButton"
+        app:layout_constraintTop_toBottomOf="@+id/resendButton" />
+
+    <Button
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_login"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="Verify Code"
+        android:onClick="verifyCode"
+        android:id="@+id/verifyButton"
+        android:textAllCaps="false"
+        android:textColor="#263238"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <Button
+        style="@style/Base.TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/resendButton"
+        android:background="@drawable/background_signup"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="Resend Code"
+        android:textAllCaps="false"
+        android:textColor="#263238"
+        android:onClick="resendCode"
+        android:textSize="18sp" />
+>>>>>>> 46efd328fcafc11df2767daba0da483d88f305bb
 </LinearLayout>

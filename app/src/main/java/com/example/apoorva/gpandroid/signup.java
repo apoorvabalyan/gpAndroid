@@ -43,6 +43,7 @@ public class signup extends AppCompatActivity {
         *************************************FIREBASE CODE*******************************************
          */
         fbAuth = FirebaseAuth.getInstance();
+<<<<<<< HEAD
         //Get the data
         mEmail = findViewById(R.id.e1);
         mPassword = findViewById(R.id.e2);
@@ -60,6 +61,86 @@ public class signup extends AppCompatActivity {
                 String email = mEmail.getText().toString();
                 String password = mPassword.getText().toString();
                 fbAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(signup.this, new OnCompleteListener<AuthResult>() {
+=======
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                Intent intent=new Intent(signup.this,MainActivity.class);
+                        startActivity(intent);
+            }
+        });
+
+
+    }
+
+    public void sendCode(View view) {
+
+        String phoneNumber = phoneText.getText().toString();
+
+        setUpVerificatonCallbacks();
+
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                phoneNumber,        // Phone number to verify
+                60,                 // Timeout duration
+                TimeUnit.SECONDS,   // Unit of timeout
+                this,               // Activity (for callback binding)
+                verificationCallbacks);
+    }
+
+    private void setUpVerificatonCallbacks() {
+
+        verificationCallbacks =
+                new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+
+                    @Override
+                    public void onVerificationCompleted(
+                            PhoneAuthCredential credential) {
+                        resendButton.setEnabled(false);
+                        verifyButton.setEnabled(false);
+
+                        signInWithPhoneAuthCredential(credential);
+                        startActivity(new Intent(signup.this, entry.class));
+                    }
+
+                    @Override
+                    public void onVerificationFailed(FirebaseException e) {
+
+                        if (e instanceof FirebaseAuthInvalidCredentialsException) {
+                            // Invalid request
+                            Log.d(TAG, "Invalid credential: "
+                                    + e.getLocalizedMessage());
+                        } else if (e instanceof FirebaseTooManyRequestsException) {
+                            // SMS quota exceeded
+                            Log.d(TAG, "SMS Quota exceeded.");
+                        }
+                    }
+
+                    @Override
+                    public void onCodeSent(String verificationId,
+                                           PhoneAuthProvider.ForceResendingToken token) {
+
+                        phoneVerificationId = verificationId;
+                        resendToken = token;
+                        verifyButton.setEnabled(true);
+                        sendButton.setEnabled(false);
+                        resendButton.setEnabled(true);
+                    }
+                };
+    }
+
+    public void verifyCode(View view) {
+
+        String code = codeText.getText().toString();
+
+        PhoneAuthCredential credential =
+                PhoneAuthProvider.getCredential(phoneVerificationId, code);
+        signInWithPhoneAuthCredential(credential);
+    }
+
+    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
+        fbAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+>>>>>>> 46efd328fcafc11df2767daba0da483d88f305bb
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(!task.isSuccessful()){
@@ -125,4 +206,5 @@ public class signup extends AppCompatActivity {
         }
         return result;
     }
+
 }
