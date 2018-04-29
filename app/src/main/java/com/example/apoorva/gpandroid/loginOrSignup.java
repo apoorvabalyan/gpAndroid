@@ -31,16 +31,9 @@ public class loginOrSignup extends AppCompatActivity {
                 startActivity(new Intent(loginOrSignup.this,signup.class));
             }
         });
-        findViewById(R.id.loginEmailButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(loginOrSignup.this,login.class));
-            }
-        });
-
     }
     public void signphone(View view)
     {
-        startActivity(new Intent(loginOrSignup.this, signup.class));
+        startActivity(new Intent(loginOrSignup.this, phone.class));
     }
 }

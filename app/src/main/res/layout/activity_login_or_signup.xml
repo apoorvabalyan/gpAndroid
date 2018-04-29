@@ -4,36 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.apoorva.gpandroid.loginOrSignup"
-<<<<<<< HEAD
     android:orientation="vertical">
 <Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Login with phone number"
+    android:text="Login / signup with phone"
+    android:onClick="signphone"
     />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login with email"
-        android:id="@+id/loginEmailButton"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick = "signphone"
-        android:text="sign up with phone"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="sign up with email"
-        android:id="@+id/sign_inButton"/>
-=======
-    android:orientation="vertical"
-    android:paddingBottom="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="24dp"
-    android:paddingLeft="24dp"
-    android:background="@drawable/n">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -114,7 +91,8 @@
                 android:textAllCaps="false"
                 android:textColor="#263238"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
             <Button
                 style="@style/Base.TextAppearance.AppCompat.Body1"
@@ -123,7 +101,7 @@
                 android:layout_marginTop="16dp"
                 android:background="@drawable/background_signup"
                 android:clickable="true"
-                android:onClick="signphone"
+                android:id="@+id/sign_inButton"
                 android:padding="16dp"
                 android:text="Sign up"
                 android:textAllCaps="false"
@@ -142,8 +120,4 @@
 
         </LinearLayout>
     </ScrollView>
-
-
-
->>>>>>> 46efd328fcafc11df2767daba0da483d88f305bb
 </LinearLayout>
