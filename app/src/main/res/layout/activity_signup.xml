@@ -51,9 +51,17 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign in"
+        android:text="Create account"
         android:textColor="@color/white"
         android:background="@drawable/loginbutton_selector"
         android:layout_margin="16dp"
-        android:id="@+id/sign_in"/>
+        android:id="@+id/btn_email_create_account"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="verify account"
+        android:textColor="@color/white"
+        android:background="@drawable/loginbutton_selector"
+        android:layout_margin="16dp"
+        android:id="@+id/btn_verify_email"/>
 </LinearLayout>
