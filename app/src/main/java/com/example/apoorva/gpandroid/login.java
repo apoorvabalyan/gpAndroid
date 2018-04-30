@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ public class login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText mEmail;
     private EditText mPassword;
+    Button googleMaps;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,9 +74,15 @@ public class login extends AppCompatActivity {
                 });
             }
         });
+
     }
 
-    /*
+
+
+
+
+
+/*
     ********************************************************CODE ENDS HERE**********************************************
      */
 
