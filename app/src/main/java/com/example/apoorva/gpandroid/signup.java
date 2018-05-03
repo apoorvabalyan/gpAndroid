@@ -18,8 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
-public class signup extends AppCompatActivity implements
-        View.OnClickListener {
+public class signup extends AppCompatActivity{
     private static final String TAG = "PhoneAuth";
     private EditText mEmail;
     private EditText mPassword;
@@ -38,6 +37,13 @@ public class signup extends AppCompatActivity implements
         pass = (EditText)findViewById(R.id.e2);
 
         mAuth = FirebaseAuth.getInstance();
+       findViewById(R.id.btn_email_create_account).setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               createAccount(email.getText().toString(), pass.getText().toString());
+           }
+       });
+
     }
 
 
@@ -57,32 +63,33 @@ public class signup extends AppCompatActivity implements
          startActivity(new Intent(signup.this, exit.class));
     }
 
-    @Override
-    public void onClick(View view) {
-        int i = view.getId();
-
-        if (i == R.id.btn_email_create_account) {
-            createAccount(email.getText().toString(), pass.getText().toString());
-        } else if (i == R.id.btn_verify_email) {
-            sendEmailVerification();
-        }
-    }
+//    @Override
+//    public void onClick(View view) {
+//        int i = view.getId();
+//        Log.d("click","create");
+//        if (i == R.id.btn_email_create_account) {
+//            createAccount(email.getText().toString(), pass.getText().toString());
+//        } else if (i == R.id.btn_verify_email) {
+//            sendEmailVerification();
+//        }
+//    }
     private void createAccount(String email, String password) {
         Log.e(TAG, "createAccount:" + email);
         if (!validateForm(email, password)) {
             return;
         }
-
+        Log.d("ap","here");
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Log.e(TAG, "createAccount: Success!");
+                            sendEmailVerification();
 
                             // update UI with the signed-in user's information
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            startActivity(new Intent(signup.this, exit.class));
+                            //FirebaseUser user = mAuth.getCurrentUser();
+                            //startActivity(new Intent(signup.this, exit.class));
                         } else {
                             Log.e(TAG, "createAccount: Fail!", task.getException());
                             Toast.makeText(getApplicationContext(), "Authentication failed!", Toast.LENGTH_SHORT).show();
@@ -92,7 +99,7 @@ public class signup extends AppCompatActivity implements
     }
     private void sendEmailVerification() {
         // Disable Verify Email button
-        findViewById(R.id.btn_verify_email).setEnabled(false);
+        //findViewById(R.id.btn_verify_email).setEnabled(false);
 
         final FirebaseUser user = mAuth.getCurrentUser();
         user.sendEmailVerification()
@@ -100,9 +107,11 @@ public class signup extends AppCompatActivity implements
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         // Re-enable Verify Email button
-                        findViewById(R.id.btn_verify_email).setEnabled(true);
+                       // findViewById(R.id.btn_verify_email).setEnabled(true);
 
                         if (task.isSuccessful()) {
+                            Log.d("email","sent");
+                            startActivity(new Intent(signup.this,login.class));
                             Toast.makeText(getApplicationContext(), "Verification email sent to " + user.getEmail(), Toast.LENGTH_SHORT).show();
                         } else {
                             Log.e(TAG, "sendEmailVerification failed!", task.getException());
@@ -181,6 +190,7 @@ public class signup extends AppCompatActivity implements
         }
         return result;
     }
+
 
 
 

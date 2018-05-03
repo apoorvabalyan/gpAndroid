@@ -11,10 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
 public class login extends AppCompatActivity {
@@ -67,7 +69,8 @@ public class login extends AppCompatActivity {
                             }
                         } else {
                             Log.d("Login","Logged in");
-                            startActivity(new Intent(login.this, exit.class));
+                            checkEmailVerification();
+                            //startActivity(new Intent(login.this, exit.class));
                             finish();
                         }
                     }
@@ -76,6 +79,18 @@ public class login extends AppCompatActivity {
         });
 
     }
+    private void checkEmailVerification(){
+        FirebaseUser firebaseUser = mAuth.getInstance().getCurrentUser();
+        Boolean emailflag = firebaseUser.isEmailVerified();
+        if(emailflag){
+            finish();
+            startActivity(new Intent(login.this, MapsActivity.class));
+        }else{
+            Toast.makeText(this, "Verify your email", Toast.LENGTH_SHORT).show();
+            mAuth.signOut();
+        }
+    }
+
 
 
 
