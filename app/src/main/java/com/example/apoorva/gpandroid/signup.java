@@ -45,15 +45,6 @@ public class signup extends AppCompatActivity{
        });
 
     }
-
-
-
-
-
-
-    /*
-        *************************************FIREBASE CODE*******************************************
-         */
     @Override
     protected void onStart() {
         super.onStart();
@@ -139,63 +130,4 @@ public class signup extends AppCompatActivity{
 
         return true;
     }
-         /*
-    ********************************************************CODE ENDS HERE**********************************************
-     */
-
-    //Firebase sign in success function
-    private void onAuthSucess(FirebaseUser user){
-        //Returns the name of the user from the email address
-        String userName = getUserName(user.getEmail());
-        //Write the user to the database
-        writeNewUser(user.getUid(),userName,user.getEmail());
-        startActivity(new Intent(signup.this,exit.class));
-        finish();
-    }
-    //Firebase sign in:Gets the user name from email address
-    private String getUserName(String email)
-    {
-        if(email.contains("@"))
-        {
-            return (email.split("@")[0]);
-        }
-        else
-            return email;
-    }
-    //Firebase sign in: Writes the user info to database
-    private void writeNewUser(String userId,String name,String email)
-    {
-        //Store the data as a user object in the database
-        User user = new User(userId,name,email);
-        mDatabase.child(userId).setValue(user);
-    }
-    //Firebase sign in: Checks the validity of the data
-    private boolean checkData(){
-        String email;
-        email = mEmail.getText().toString();
-        String password = mPassword.getText().toString();
-        Boolean result = true;
-        if(TextUtils.isEmpty(email)){
-            mEmail.setError("Required field");
-            result = false;
-        }
-        if(TextUtils.isEmpty(password)){
-            mPassword.setError("Required field");
-            result = false;
-        }
-        if(password.length() < 6)
-        {
-            result = false;
-            mPassword.setError("Length should be 6.");
-        }
-        return result;
-    }
-
-
-
-
-
-
-
-
-    }
+}

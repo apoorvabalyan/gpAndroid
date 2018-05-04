@@ -21,9 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".login" />
-        <activity android:name=".entry" />
         <activity android:name=".exit" />
-        <activity android:name=".loginOrSignup">
+        <activity android:name=".loginOrSignup" />
+        <activity android:name=".entry">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

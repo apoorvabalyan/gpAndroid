@@ -31,9 +31,6 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        /*
-        *************************************FIREBASE CODE*******************************************
-         */
         mAuth = FirebaseAuth.getInstance();
         //Get the data
         mEmail = findViewById(R.id.emailL);
@@ -90,15 +87,4 @@ public class login extends AppCompatActivity {
             mAuth.signOut();
         }
     }
-
-
-
-
-
-
-
-/*
-    ********************************************************CODE ENDS HERE**********************************************
-     */
-
 }

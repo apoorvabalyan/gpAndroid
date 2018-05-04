@@ -15,10 +15,11 @@ public class entry extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry);
         fbAuth = FirebaseAuth.getInstance();
-    }
-
-    public void signOut(View view) {
-        fbAuth.signOut();
-        startActivity(new Intent(entry.this, signup.class));
+        findViewById(R.id.loginorsignup).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(entry.this,loginOrSignup.class));
+            }
+        });
     }
 }
