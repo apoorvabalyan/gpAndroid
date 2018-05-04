@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
-public class signup extends AppCompatActivity{
+public class signup extends AppCompatActivity {
     private static final String TAG = "PhoneAuth";
     private EditText mEmail;
     private EditText mPassword;
@@ -27,43 +27,38 @@ public class signup extends AppCompatActivity{
     private FirebaseAuth mAuth;
 
     private EditText email, name, pass;
+    private Button googleMaps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        email = (EditText)findViewById(R.id.e1);
-        name = (EditText)findViewById(R.id.name);
-        pass = (EditText)findViewById(R.id.e2);
+        email = (EditText) findViewById(R.id.e1);
+        name = (EditText) findViewById(R.id.name);
+        pass = (EditText) findViewById(R.id.e2);
+        googleMaps = (Button)findViewById(R.id.sign_up);
 
         mAuth = FirebaseAuth.getInstance();
-       findViewById(R.id.btn_email_create_account).setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               createAccount(email.getText().toString(), pass.getText().toString());
-           }
-       });
+        findViewById(R.id.btn_email_create_account).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createAccount(email.getText().toString(), pass.getText().toString());
+            }
+        });
 
     }
 
 
-
-
-
-
-    /*
-        *************************************FIREBASE CODE*******************************************
-         */
     @Override
     protected void onStart() {
         super.onStart();
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null)
-         startActivity(new Intent(signup.this, exit.class));
+        if (currentUser != null)
+            startActivity(new Intent(signup.this, exit.class));
     }
 
-//    @Override
+    //    @Override
 //    public void onClick(View view) {
 //        int i = view.getId();
 //        Log.d("click","create");
@@ -78,7 +73,7 @@ public class signup extends AppCompatActivity{
         if (!validateForm(email, password)) {
             return;
         }
-        Log.d("ap","here");
+        Log.d("ap", "here");
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -97,6 +92,7 @@ public class signup extends AppCompatActivity{
                     }
                 });
     }
+
     private void sendEmailVerification() {
         // Disable Verify Email button
         //findViewById(R.id.btn_verify_email).setEnabled(false);
@@ -107,11 +103,11 @@ public class signup extends AppCompatActivity{
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         // Re-enable Verify Email button
-                       // findViewById(R.id.btn_verify_email).setEnabled(true);
+                        // findViewById(R.id.btn_verify_email).setEnabled(true);
 
                         if (task.isSuccessful()) {
-                            Log.d("email","sent");
-                            startActivity(new Intent(signup.this,login.class));
+                            Log.d("email", "sent");
+                            startActivity(new Intent(signup.this, login.class));
                             Toast.makeText(getApplicationContext(), "Verification email sent to " + user.getEmail(), Toast.LENGTH_SHORT).show();
                         } else {
                             Log.e(TAG, "sendEmailVerification failed!", task.getException());
@@ -120,6 +116,7 @@ public class signup extends AppCompatActivity{
                     }
                 });
     }
+
     private boolean validateForm(String email, String password) {
 
         if (TextUtils.isEmpty(email)) {
@@ -138,64 +135,9 @@ public class signup extends AppCompatActivity{
         }
 
         return true;
-    }
-         /*
-    ********************************************************CODE ENDS HERE**********************************************
-     */
-
-    //Firebase sign in success function
-    private void onAuthSucess(FirebaseUser user){
-        //Returns the name of the user from the email address
-        String userName = getUserName(user.getEmail());
-        //Write the user to the database
-        writeNewUser(user.getUid(),userName,user.getEmail());
-        startActivity(new Intent(signup.this,exit.class));
-        finish();
-    }
-    //Firebase sign in:Gets the user name from email address
-    private String getUserName(String email)
-    {
-        if(email.contains("@"))
-        {
-            return (email.split("@")[0]);
-        }
-        else
-            return email;
-    }
-    //Firebase sign in: Writes the user info to database
-    private void writeNewUser(String userId,String name,String email)
-    {
-        //Store the data as a user object in the database
-        User user = new User(userId,name,email);
-        mDatabase.child(userId).setValue(user);
-    }
-    //Firebase sign in: Checks the validity of the data
-    private boolean checkData(){
-        String email;
-        email = mEmail.getText().toString();
-        String password = mPassword.getText().toString();
-        Boolean result = true;
-        if(TextUtils.isEmpty(email)){
-            mEmail.setError("Required field");
-            result = false;
-        }
-        if(TextUtils.isEmpty(password)){
-            mPassword.setError("Required field");
-            result = false;
-        }
-        if(password.length() < 6)
-        {
-            result = false;
-            mPassword.setError("Length should be 6.");
-        }
-        return result;
-    }
 
 
 
+}
 
-
-
-
-
-    }
+}
