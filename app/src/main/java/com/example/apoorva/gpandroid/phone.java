@@ -88,10 +88,6 @@ public class phone extends AppCompatActivity implements View.OnClickListener {
 
         // Assign views
 
-
-        mStatusText = (TextView) findViewById(R.id.status);
-        mDetailText = (TextView) findViewById(R.id.detail);
-
         mPhoneNumberField = (EditText) findViewById(R.id.field_phone_number);
         mVerificationField = (EditText) findViewById(R.id.field_verification_code);
 

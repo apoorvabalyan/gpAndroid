@@ -8,14 +8,11 @@ import android.view.View;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class entry extends AppCompatActivity {
-    FirebaseAuth fbAuth;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry);
-        fbAuth = FirebaseAuth.getInstance();
-        findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.signoutButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(entry.this,loginOrSignup.class));

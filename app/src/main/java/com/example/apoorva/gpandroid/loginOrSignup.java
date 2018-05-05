@@ -44,7 +44,6 @@ public class loginOrSignup extends AppCompatActivity {
      startActivity(new Intent(loginOrSignup.this, signup.class));
     }
 
-
     public void signphone(View view)
     {
         startActivity(new Intent(loginOrSignup.this, phone.class));

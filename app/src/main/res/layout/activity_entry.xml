@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.apoorva.gpandroid.entry"
+
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
- <TextView
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:padding="40dp"
-     android:text="Entry point of the app"
-     android:textColor="#000000"
-     android:textSize="25sp" />
 
- <Button
-     android:id="@+id/signoutButton"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_gravity="center"
-     android:background="@drawable/loginbutton_selector"
-     android:onClick="signOut"
-     android:padding="10dp"
-     android:text="Sign Out"
-     android:textSize="30sp" />
+  <Button
+      android:id="@+id/signoutButton"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:background="#a4c639"
+      android:text="BOOK YOUR RIDE"
+      android:textSize="28dp">
+
+  </Button>
 </LinearLayout>

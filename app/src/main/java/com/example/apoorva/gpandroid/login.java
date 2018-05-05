@@ -24,9 +24,6 @@ public class login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText mEmail;
     private EditText mPassword;
-    Button googleMaps;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
