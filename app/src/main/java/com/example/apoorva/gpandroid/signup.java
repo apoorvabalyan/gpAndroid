@@ -56,7 +56,7 @@ public class signup extends AppCompatActivity {
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null)
-            startActivity(new Intent(signup.this, exit.class));
+            startActivity(new Intent(signup.this, MapsActivity.class));
     }
 
     //    @Override

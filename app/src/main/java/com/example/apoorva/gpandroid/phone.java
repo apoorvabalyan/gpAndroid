@@ -191,7 +191,7 @@ public class phone extends AppCompatActivity implements View.OnClickListener {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null)
         {
-            startActivity(new Intent(phone.this, exit.class));
+            startActivity(new Intent(phone.this, MapsActivity.class));
         }
 
         // [START_EXCLUDE]
@@ -271,7 +271,7 @@ public class phone extends AppCompatActivity implements View.OnClickListener {
                                 public void onDataChange(DataSnapshot snapshot) {
                                     if (snapshot.getValue() != null) {
 
-                                        Intent y = new Intent(phone.this, exit.class);
+                                        Intent y = new Intent(phone.this, MapsActivity.class);
                                         y.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         y.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(y);
@@ -302,7 +302,7 @@ public class phone extends AppCompatActivity implements View.OnClickListener {
                                         myRef.child("users").child(userID).child("contact").setValue(contactno);
                                         myRef.child("users").child(userID).child("name").setValue(name_user);
 
-                                        Intent y = new Intent(phone.this, exit.class);
+                                        Intent y = new Intent(phone.this, MapsActivity.class);
                                         y.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         y.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(y);
