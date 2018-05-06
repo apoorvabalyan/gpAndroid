@@ -107,7 +107,8 @@
             android:textColor="@color/white"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="15sp"
-            android:text="Sign out" />
+            android:text="Sign out"
+            android:visibility="gone"/>
 
         </RelativeLayout>
 </LinearLayout>

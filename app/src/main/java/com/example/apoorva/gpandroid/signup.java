@@ -25,8 +25,9 @@ public class signup extends AppCompatActivity {
     private FirebaseAuth fbAuth;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
+    public static EditText name;
 
-    private EditText email, name, pass;
+    private EditText email,  pass;
     private Button googleMaps;
 
     @Override
