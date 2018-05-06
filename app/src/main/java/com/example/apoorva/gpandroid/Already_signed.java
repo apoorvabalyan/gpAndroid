@@ -24,12 +24,12 @@ public class Already_signed extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_already_signed);
         mAuth = FirebaseAuth.getInstance();
         //Get the data
-        mEmail = findViewById(R.id.emailL);
-        mPassword = findViewById(R.id.passL);
-        findViewById(R.id.loginButton).setOnClickListener(new View.OnClickListener() {
+        mEmail = findViewById(R.id.emailL_signed);
+        mPassword = findViewById(R.id.passL_signed);
+        findViewById(R.id.loginButton_signed).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = mEmail.getText().toString().trim();

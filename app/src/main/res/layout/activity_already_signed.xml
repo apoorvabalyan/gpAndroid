@@ -26,7 +26,7 @@
         android:textColorHint="@color/background_color"
         android:textColor="@color/background_color"
         android:layout_margin="16dp"
-        android:id="@+id/emailL"/>
+        android:id="@+id/emailL_signed"/>
     <EditText
         android:hint="Password"
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
         android:textColorHint="@color/background_color"
         android:textColor="@color/background_color"
         android:layout_height="wrap_content"
-        android:id="@+id/passL"/>
+        android:id="@+id/passL_signed"/>
     <Button
         android:text="Login"
         android:layout_width="match_parent"
@@ -42,6 +42,6 @@
         android:layout_margin="16dp"
         android:textColor="@color/white"
         android:background="@drawable/loginbutton_selector"
-        android:id="@+id/loginButton"/>
+        android:id="@+id/loginButton_signed"/>
 
 </LinearLayout>
