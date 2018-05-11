@@ -1,62 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LinearLayout
     android:orientation="vertical"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:layout_height="wrap_content"
+
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_marginTop="100dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/grad">
 
     <Button
         android:id="@+id/login"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/loginbutton_selector"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+
+
         android:gravity="center"
         android:onClick="login"
         android:padding="5dp"
         android:text="Log in"
         android:textAllCaps="false"
-        android:textColor="@color/white_greyish"
+        android:textColor="@color/common_google_signin_btn_text_light"
         android:textSize="15sp"
         android:textStyle="bold"
+        android:background="@color/button_selectorcolor"
         />
 
     <Button
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="150dp"
         android:id="@+id/sign_up"
-        android:layout_weight="1"
+
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/loginbutton_selector"
+
         android:clickable="true"
         android:gravity="center"
         android:onClick="sign_up"
         android:padding="5dp"
         android:text="Sign up"
         android:textAllCaps="false"
-        android:textColor="@color/white_greyish"
+        android:textColor="@color/common_google_signin_btn_text_light"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:background="@color/button_selectorcolor"/>
 
     <Button
-        android:layout_marginTop="35dp"
-        android:background="@drawable/loginbutton_selector"
+        android:layout_marginTop="150dp"
+
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+
         android:layout_gravity="center"
         android:gravity="center"
         android:onClick="signphone"
         android:padding="5dp"
         android:text="LogIn/SignIn with Phone"
         android:textAllCaps="false"
-        android:textColor="@color/white_greyish"
+        android:textColor="@color/common_google_signin_btn_text_light"
         android:textSize="15sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:background="@color/button_selectorcolor"/>
 </LinearLayout>
 
 
