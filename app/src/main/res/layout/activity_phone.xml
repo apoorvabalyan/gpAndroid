@@ -9,95 +9,131 @@
     android:layout_marginTop="20dp"
 
    >
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:textColor="@color/background_color"
-            android:text="SIGNUP"
-            android:paddingBottom="10dp"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:gravity="center"/>
-        <EditText
-            android:id="@+id/field_phone_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="@color/background_color"
-            android:textColor="@color/background_color"
-            android:layout_margin="16dp"
-            android:hint="Phone Number  "
-            android:inputType="phone"
-            android:textSize="15sp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputLayout">
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/background_color"
             android:textColor="@color/background_color"
-            android:layout_margin="16dp"
-            android:hint="Name"
-            android:inputType="phone"
-            android:textSize="15sp" />
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="20dp"
+            android:hint="Enter your Name"
+            android:background="@drawable/edt_bg_selector"
+            android:textSize = "20sp"
+            />
+    </android.support.design.widget.TextInputLayout>
 
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
         <EditText
-            android:id="@+id/field_verification_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/background_color"
             android:textColor="@color/background_color"
-            android:layout_margin="16dp"
-            android:hint="Verification code "
+            android:background="@drawable/edt_bg_selector"
+            android:layout_margin="46dp"
             android:inputType="phone"
-            android:textSize="15sp" />
+            android:textSize="20sp"
+            android:hint="Phone Number  "
 
-        <RelativeLayout
+            android:id="@+id/field_phone_number"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+
+        android:id="@+id/button_start_verification"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Click here to generaate OTP"
+        android:layout_gravity="center"
+        android:background="@drawable/loginbutton_selector"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white_greyish"
+        android:textSize="15sp" />
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="30dp">
-        <Button
-            android:layout_alignParentLeft="true"
-            android:id="@+id/button_start_verification"
-            android:layout_width="125dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Next"
-            android:background="@drawable/loginbutton_selector"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/white_greyish"
-            android:textSize="15sp" />
+            android:textColorHint="@color/background_color"
+            android:textColor="@color/background_color"
+            android:background="@drawable/edt_bg_selector"
+            android:id="@+id/field_verification_code"
+            android:layout_margin="30dp"
+            android:hint="Verification code "
+            android:inputType="phone"
+            android:textSize="20sp"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+
 
         <Button
-            android:layout_alignParentRight="true"
+
             android:id="@+id/button_verify_phone"
-            android:layout_width="125dp"
+            android:layout_width="250dp"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="13dp"
             android:text="Verify OTP"
             android:textColor="@color/white"
             android:background="@drawable/loginbutton_selector"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp" />
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
 
-        <Button
-            android:id="@+id/button_resend"
-            android:layout_width="125dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Resend OTP"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/button_start_verification"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/white"
-            android:background="@drawable/loginbutton_selector"
-            android:textSize="15sp" />
+        android:text="             Did not recieved  OTP ?
+                 Press Resend OTP "
+
+        android:layout_gravity="center"/>
 
 
-        <Button
-            android:layout_alignParentRight="true"
+
+
+
+
+    <Button
+
+        android:id="@+id/button_resend"
+
+        android:layout_width="250dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_margin="13dp"
+        android:text="Resend OTP"
+        android:textColor="@color/white"
+        android:background="@drawable/loginbutton_selector"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="15sp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp" />
+
+
+    <Button
+
             android:id="@+id/sign_out_button"
             android:layout_width="125dp"
             android:layout_height="wrap_content"
@@ -110,5 +146,5 @@
             android:text="Sign out"
             android:visibility="gone"/>
 
-        </RelativeLayout>
+
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,6 +28,8 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
         mAuth = FirebaseAuth.getInstance();
         //Get the data
         mEmail = findViewById(R.id.emailL);
@@ -94,4 +97,8 @@ public class login extends AppCompatActivity {
         UserProfile userProfile = new UserProfile( mEmail.getText().toString(), signup.name.getText().toString());
         myRef.setValue(userProfile);
     }
+
+
+
+
 }

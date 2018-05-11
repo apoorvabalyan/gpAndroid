@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/grad">
+    >
 
 
     <LinearLayout
@@ -25,54 +25,80 @@
             android:padding="16dp"
             android:src="@drawable/login" />
 
-        <EditText
+
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:ems="10"
-            android:background="@android:color/transparent"
-            android:drawablePadding="12dp"
-            android:hint="Username"
-            android:textColorHint="#fff"
-            android:maxLines="1"
-            android:drawableLeft="@drawable/ic_person_white_24dp"
-            android:layout_marginTop="50dp"
-            android:id="@+id/emailL"/>
+            android:id="@+id/inputLayout">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/background_color"
+                android:textColor="@color/background_color"
+
+                android:ems="10"
+                android:background="@drawable/edt_bg_selector"
+                android:textSize = "25sp"
+                android:inputType="textEmailAddress"
+                android:hint="Username"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_person_white_24dp"
+                android:layout_marginTop="50dp"
+                android:id="@+id/emailL"
+                />
+
+        </android.support.design.widget.TextInputLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#ffffff"/>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           >
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/background_color"
+            android:textColor="@color/background_color"
+            android:background="@drawable/edt_bg_selector"
+            android:textSize = "25sp"
+            android:drawableLeft="@drawable/ic_person_white_24dp"
             android:inputType="textPassword"
             android:ems="10"
-            android:background="@android:color/transparent"
             android:drawablePadding="12dp"
             android:hint="............"
-            android:textColorHint="#fff"
             android:maxLines="1"
-            android:drawableLeft="@drawable/ic_lock_white_24dp"
-            android:layout_marginTop="50dp"
-            android:id="@+id/passL"/>
+            android:layout_marginTop="30dp"
+            android:id="@+id/passL"
+            />
+        </android.support.design.widget.TextInputLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#ffffff"
            />
 
+
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_login"
-            android:layout_marginTop="80dp"
-            android:text="LOG IN"
-            android:textColor="@color/black"
-            android:textAllCaps="false"
-            android:padding="16dp"
-            android:clickable="true"
             android:id="@+id/loginButton"
             style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:clickable="true"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Log In"
+            android:textStyle="normal"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/loginbutton_selector"
+            android:layout_marginTop="35dp"
+            android:focusable="true"
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:padding = "15dp"
             />
 
     </LinearLayout>
