@@ -3,25 +3,20 @@ package com.example.apoorva.gpandroid;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AlertDialog;
 import android.location.Location;
-
-import com.google.android.gms.location.LocationListener;
-
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.view.MenuItem;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -62,6 +57,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public void onClick(View view) {
                 mAuth.signOut();
                 startActivity(new Intent(MapsActivity.this,loginOrSignup.class));
+            }
+        });
+        findViewById(R.id.ride).setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View view)
+            {
+                startActivity(new Intent(MapsActivity.this, riding.class));
             }
         });
     }
