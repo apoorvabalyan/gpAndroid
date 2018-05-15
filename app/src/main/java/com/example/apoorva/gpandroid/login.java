@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -76,7 +75,8 @@ public class login extends AppCompatActivity {
 
     }
     private void checkEmailVerification(){
-        FirebaseUser firebaseUser = mAuth.getInstance().getCurrentUser();
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        assert firebaseUser != null;
         Boolean emailflag = firebaseUser.isEmailVerified();
         if(emailflag){
             sendUserData();
@@ -91,8 +91,9 @@ public class login extends AppCompatActivity {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
         FirebaseUser user = mAuth.getCurrentUser();
+        assert user != null;
         String uid = user.getUid();
-        DatabaseReference myRef = firebaseDatabase.getReference(uid);
+        DatabaseReference myRef = firebaseDatabase.getReference("users").child(uid);
         // Toast.makeText(getApplicationContext(), mEmail.getText().toString() + " " + signup.name.getText().toString(), Toast.LENGTH_SHORT).show();
         UserProfile userProfile = new UserProfile( mEmail.getText().toString(), signup.name.getText().toString());
         myRef.setValue(userProfile);
